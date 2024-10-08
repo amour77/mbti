@@ -4,7 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>测试选择</title>
-    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS -->
+    
+    <!-- 在 <head> 标签中使用 <style> 标签编写 CSS 样式 -->
+    <style>
+        /* 设置页面样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* 封面容器样式 */
+        .cover {
+            text-align: center;
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 标题样式 */
+        .cover h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* 按钮样式 */
+        .testButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* 鼠标悬停时按钮变色 */
+        .testButton:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
