@@ -156,15 +156,77 @@
             const agreeablenessScore = parseInt(agreeableness.value);
             const neuroticismScore = parseInt(neuroticism.value);
 
+            // 根据得分显示解释说明
+            const opennessDesc = getOpennessDescription(opennessScore);
+            const conscientiousnessDesc = getConscientiousnessDescription(conscientiousnessScore);
+            const extraversionDesc = getExtraversionDescription(extraversionScore);
+            const agreeablenessDesc = getAgreeablenessDescription(agreeablenessScore);
+            const neuroticismDesc = getNeuroticismDescription(neuroticismScore);
+
             // 显示结果
-            document.getElementById("opennessResult").textContent = "开放性得分: " + opennessScore;
-            document.getElementById("conscientiousnessResult").textContent = "尽责性得分: " + conscientiousnessScore;
-            document.getElementById("extraversionResult").textContent = "外向性得分: " + extraversionScore;
-            document.getElementById("agreeablenessResult").textContent = "宜人性得分: " + agreeablenessScore;
-            document.getElementById("neuroticismResult").textContent = "情绪稳定性得分: " + neuroticismScore;
+            document.getElementById("opennessResult").textContent = "开放性得分: " + opennessScore + " - " + opennessDesc;
+            document.getElementById("conscientiousnessResult").textContent = "尽责性得分: " + conscientiousnessScore + " - " + conscientiousnessDesc;
+            document.getElementById("extraversionResult").textContent = "外向性得分: " + extraversionScore + " - " + extraversionDesc;
+            document.getElementById("agreeablenessResult").textContent = "宜人性得分: " + agreeablenessScore + " - " + agreeablenessDesc;
+            document.getElementById("neuroticismResult").textContent = "情绪稳定性得分: " + neuroticismScore + " - " + neuroticismDesc;
 
             // 显示结果区域
             document.getElementById("result").style.display = "block";
+        }
+
+        // 开放性的描述
+        function getOpennessDescription(score) {
+            if (score >= 4) {
+                return "你非常具有开放性，喜欢新事物和新观点。";
+            } else if (score <= 2) {
+                return "你倾向于现实和实际，避免冒险。";
+            } else {
+                return "你在开放性方面表现适中，既能接受新事物，也重视传统。";
+            }
+        }
+
+        // 尽责性的描述
+        function getConscientiousnessDescription(score) {
+            if (score >= 4) {
+                return "你非常有条理，做事严谨，追求高效。";
+            } else if (score <= 2) {
+                return "你比较随意，可能缺少条理和计划性。";
+            } else {
+                return "你在尽责性方面表现适中，既有条理，也能随机应变。";
+            }
+        }
+
+        // 外向性的描述
+        function getExtraversionDescription(score) {
+            if (score >= 4) {
+                return "你是外向型人格，精力充沛，喜欢社交。";
+            } else if (score <= 2) {
+                return "你比较内向，倾向于独处和深思。";
+            } else {
+                return "你在外向性方面表现适中，既享受社交，也喜欢独处。";
+            }
+        }
+
+        // 宜人性的描述
+        function getAgreeablenessDescription(score) {
+            if (score >= 4) {
+                return "你非常友善，善解人意，乐于助人。";
+            } else if (score <= 2) {
+                return "你可能更加独立，少关心他人感受。";
+            } else {
+                return "你在宜人性方面表现适中，既关心他人，也能坚持自己。";
+            }
+        }
+
+        // 情绪稳定性的描述
+        function getNeuroticismDescription(score) {
+            if (score >= 4) {
+                return "你情绪非常稳定，能够很好地应对压力。";
+            } else if (score <= 2) {
+                return "你容易受到压力和情绪波动的影响。";
+            } else {
+                return "你在情绪管理上表现适中，能处理情绪但有时也会感到压力。";
+            }
         }
     </script>
 
