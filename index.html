@@ -4,37 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>测试选择</title>
-    
-    <!-- 在 <head> 标签中使用 <style> 标签编写 CSS 样式 -->
+
+    <!-- 内联 CSS 样式，用于设置背景图片 -->
     <style>
-        /* 设置页面样式 */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            background-image: url('images/background.jpg'); /* 将 your-image.jpg 替换为你选择的图片文件 */
+            background-size: cover; /* 背景图片覆盖整个页面 */
+            background-position: center; /* 背景图片居中显示 */
+            background-repeat: no-repeat; /* 防止背景图片重复 */
+            height: 100vh; /* 页面高度 100% 视口高度 */
+            margin: 0; /* 移除默认的页面边距 */
         }
 
-        /* 封面容器样式 */
         .cover {
             text-align: center;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.8); /* 半透明白色背景，以便文本更清晰 */
             padding: 50px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* 标题样式 */
         .cover h1 {
             font-size: 36px;
             color: #333;
             margin-bottom: 20px;
         }
 
-        /* 按钮样式 */
         .testButton {
             background-color: #4CAF50;
             color: white;
@@ -47,7 +43,6 @@
             transition: background-color 0.3s ease;
         }
 
-        /* 鼠标悬停时按钮变色 */
         .testButton:hover {
             background-color: #45a049;
         }
