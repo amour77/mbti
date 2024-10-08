@@ -1,73 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MBTI 性格测试</title>
-    <link rel="stylesheet" href="style.css">
+    <title>测试选择</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS -->
 </head>
 <body>
-    <div class="container">
-        <h1> MBTI 性格测试</h1>
-        <form id="mbti-form">
-            <!-- 外向(E) vs 内向(I) -->
-            <div class="question">
-                <p>1. 当我参加一个社交聚会时，我更喜欢：</p>
-                <label><input type="radio" name="q1" value="E"> 与很多人交谈</label>
-                <label><input type="radio" name="q1" value="I"> 与几个人深入交谈</label>
-            </div>
-            <div class="question">
-                <p>2. 在一个周末，我更喜欢：</p>
-                <label><input type="radio" name="q2" value="E"> 外出参加活动</label>
-                <label><input type="radio" name="q2" value="I"> 待在家里休息</label>
-            </div>
 
-            <!-- 感觉(S) vs 直觉(N) -->
-            <div class="question">
-                <p>3. 我更重视：</p>
-                <label><input type="radio" name="q3" value="S"> 实际的事实</label>
-                <label><input type="radio" name="q3" value="N"> 想象中的可能性</label>
-            </div>
-            <div class="question">
-                <p>4. 当做决定时，我更信任：</p>
-                <label><input type="radio" name="q4" value="S"> 我的经验</label>
-                <label><input type="radio" name="q4" value="N"> 我的直觉</label>
-            </div>
+    <div class="cover">
+        <h1>欢迎参加测试</h1>
+        <p>请选择你要进行的测试</p>
 
-            <!-- 思考(T) vs 情感(F) -->
-            <div class="question">
-                <p>5. 当解决问题时，我更关注：</p>
-                <label><input type="radio" name="q5" value="T"> 逻辑和事实</label>
-                <label><input type="radio" name="q5" value="F"> 人际关系和情感</label>
-            </div>
-            <div class="question">
-                <p>6. 我做决定时，通常基于：</p>
-                <label><input type="radio" name="q6" value="T"> 逻辑推理</label>
-                <label><input type="radio" name="q6" value="F"> 我的感受</label>
-            </div>
+        <!-- 大五人格测试按钮 -->
+        <button class="testButton" onclick="location.href='about.html'">大五人格测试</button>
 
-            <!-- 判断(J) vs 知觉(P) -->
-            <div class="question">
-                <p>7. 我更喜欢生活：</p>
-                <label><input type="radio" name="q7" value="J"> 有计划且有条理</label>
-                <label><input type="radio" name="q7" value="P"> 灵活且开放</label>
-            </div>
-            <div class="question">
-                <p>8. 我更倾向于：</p>
-                <label><input type="radio" name="q8" value="J"> 提前做决定并准备好</label>
-                <label><input type="radio" name="q8" value="P"> 随时调整计划</label>
-            </div>
-
-            <button type="submit">提交</button>
-        </form>
-
-        <div id="result"></div>
-        <div id="result-description"></div>
+        <!-- MBTI测试按钮 -->
+        <button class="testButton" onclick="location.href='mbti.html'">MBTI 性格测试</button>
     </div>
-    <div align="center">
-      <script src="script.js"></script>
-      <a href="about.html" class="button" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-align: center; text-decoration: none; border-radius: 5px;">大五人格测试
-     </a></div>
 
 </body>
 </html>
