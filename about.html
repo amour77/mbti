@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大五人格测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f3fe;
+            border: 1px solid #b3d4fc;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>大五人格测试</h1>
+
+    <div class="container">
+        <!-- 开放性问题 -->
+        <div class="question">
+            <label>1. 我喜欢学习新的东西，并对新思想充满好奇。</label>
+            <input type="radio" name="openness" value="1"> 非常不同意
+            <input type="radio" name="openness" value="2"> 不同意
+            <input type="radio" name="openness" value="3"> 一般
+            <input type="radio" name="openness" value="4"> 同意
+            <input type="radio" name="openness" value="5"> 非常同意
+        </div>
+
+        <!-- 尽责性问题 -->
+        <div class="question">
+            <label>2. 我总是按时完成任务，并且井井有条。</label>
+            <input type="radio" name="conscientiousness" value="1"> 非常不同意
+            <input type="radio" name="conscientiousness" value="2"> 不同意
+            <input type="radio" name="conscientiousness" value="3"> 一般
+            <input type="radio" name="conscientiousness" value="4"> 同意
+            <input type="radio" name="conscientiousness" value="5"> 非常同意
+        </div>
+
+        <!-- 外向性问题 -->
+        <div class="question">
+            <label>3. 我喜欢与他人交往，并且精力充沛。</label>
+            <input type="radio" name="extraversion" value="1"> 非常不同意
+            <input type="radio" name="extraversion" value="2"> 不同意
+            <input type="radio" name="extraversion" value="3"> 一般
+            <input type="radio" name="extraversion" value="4"> 同意
+            <input type="radio" name="extraversion" value="5"> 非常同意
+        </div>
+
+        <!-- 宜人性问题 -->
+        <div class="question">
+            <label>4. 我关心他人的感受，并愿意帮助他人。</label>
+            <input type="radio" name="agreeableness" value="1"> 非常不同意
+            <input type="radio" name="agreeableness" value="2"> 不同意
+            <input type="radio" name="agreeableness" value="3"> 一般
+            <input type="radio" name="agreeableness" value="4"> 同意
+            <input type="radio" name="agreeableness" value="5"> 非常同意
+        </div>
+
+        <!-- 情绪稳定性问题 -->
+        <div class="question">
+            <label>5. 我很难感到焦虑，并能很好地管理自己的情绪。</label>
+            <input type="radio" name="neuroticism" value="1"> 非常不同意
+            <input type="radio" name="neuroticism" value="2"> 不同意
+            <input type="radio" name="neuroticism" value="3"> 一般
+            <input type="radio" name="neuroticism" value="4"> 同意
+            <input type="radio" name="neuroticism" value="5"> 非常同意
+        </div>
+
+        <!-- 提交按钮 -->
+        <button class="button" onclick="calculateResult()">提交测试</button>
+
+        <!-- 结果显示区域 -->
+        <div class="result" id="result">
+            <h3>测试结果：</h3>
+            <p id="opennessResult"></p>
+            <p id="conscientiousnessResult"></p>
+            <p id="extraversionResult"></p>
+            <p id="agreeablenessResult"></p>
+            <p id="neuroticismResult"></p>
+        </div>
+    </div>
+
+    <script>
+        // 计算结果的函数
+        function calculateResult() {
+            // 获取每个问题的选项值
+            const openness = document.querySelector('input[name="openness"]:checked');
+            const conscientiousness = document.querySelector('input[name="conscientiousness"]:checked');
+            const extraversion = document.querySelector('input[name="extraversion"]:checked');
+            const agreeableness = document.querySelector('input[name="agreeableness"]:checked');
+            const neuroticism = document.querySelector('input[name="neuroticism"]:checked');
+
+            // 确保每个问题都选中一个选项
+            if (!openness || !conscientiousness || !extraversion || !agreeableness || !neuroticism) {
+                alert("请完成所有问题再提交测试！");
+                return;
+            }
+
+            // 计算每个维度的得分
+            const opennessScore = parseInt(openness.value);
+            const conscientiousnessScore = parseInt(conscientiousness.value);
+            const extraversionScore = parseInt(extraversion.value);
+            const agreeablenessScore = parseInt(agreeableness.value);
+            const neuroticismScore = parseInt(neuroticism.value);
+
+            // 显示结果
+            document.getElementById("opennessResult").textContent = "开放性得分: " + opennessScore;
+            document.getElementById("conscientiousnessResult").textContent = "尽责性得分: " + conscientiousnessScore;
+            document.getElementById("extraversionResult").textContent = "外向性得分: " + extraversionScore;
+            document.getElementById("agreeablenessResult").textContent = "宜人性得分: " + agreeablenessScore;
+            document.getElementById("neuroticismResult").textContent = "情绪稳定性得分: " + neuroticismScore;
+
+            // 显示结果区域
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
